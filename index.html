@@ -80,6 +80,8 @@ header.hero .insta{display:inline-flex;align-items:center;gap:6px;font-size:14px
 
 .grp{margin-top:36px}
 .tag{display:inline-block;font-family:'Jalnan',sans-serif;font-weight:400;font-size:13px;letter-spacing:.03em;border-radius:99px;padding:6px 16px;margin-bottom:6px;color:var(--pink-deep);background:var(--pink-bg)}
+.cat-h{font-family:'Jalnan',sans-serif;font-weight:400;font-size:clamp(21px,3.6vw,28px);color:var(--ink);margin:38px 0 4px}
+.cat-h:first-child{margin-top:0}
 
 .hw{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-top:14px;box-shadow:0 6px 18px rgba(224,86,122,.06)}
 .hw-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
@@ -353,25 +355,11 @@ footer a{color:var(--pink-deep);font-weight:700;text-decoration:none}
     <tr><td><a href="#vsec-1"><span class="n">1</span><span class="t">영상 불러오기</span><span class="d">가져오기 · 비율 설정</span></a></td></tr>
     <tr><td><a href="#vsec-2"><span class="n">2</span><span class="t">미디어</span><span class="d">추가 · 순서 · 배속</span></a></td></tr>
     <tr><td><a href="#vsec-tip"><span class="n pink">💡</span><span class="t">가장 많이 쓰는 기능</span><span class="d">컷편집 · 글자 · 스티커 · 효과</span></a></td></tr>
-    <tr><td><a href="#vsec-1-1"><span class="n muted">1-1</span><span class="t">배경음악</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-1-2"><span class="n muted">1-2</span><span class="t">효과음</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-1-3"><span class="n muted">1-3</span><span class="t">음성 녹음</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-1-4"><span class="n muted">1-4</span><span class="t">AI 보이스</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-2-1"><span class="n">2-1</span><span class="t">스티커</span><span class="d">저장 · 최근 · 검색</span></a></td></tr>
-    <tr><td><a href="#vsec-2-2"><span class="n muted">2-2</span><span class="t">프레임</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-2-3"><span class="n muted">2-3</span><span class="t">파티클</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-2-4"><span class="n muted">2-4</span><span class="t">그리기&amp;도형</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-3-1"><span class="n">3-1</span><span class="t">글자</span><span class="d">글꼴 · 색 · 애니메이션</span></a></td></tr>
-    <tr><td><a href="#vsec-3-2"><span class="n muted">3-2</span><span class="t">라벨</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-3-3"><span class="n muted">3-3</span><span class="t">자막</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-3-4"><span class="n">3-4</span><span class="t">자동 자막(AI)</span><span class="d">음성→자막 변환</span></a></td></tr>
-    <tr><td><a href="#vsec-4-1"><span class="n">4-1</span><span class="t">이미지 (PIP)</span><span class="d">사진 추가하기</span></a></td></tr>
-    <tr><td><a href="#vsec-4-2"><span class="n muted">4-2</span><span class="t">GIF</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-4-3"><span class="n">4-3</span><span class="t">비디오 (PIP)</span><span class="d">얼굴 영상 + 자료 화면</span></a></td></tr>
-    <tr><td><a href="#vsec-4-4"><span class="n muted">4-4</span><span class="t">VLLO 스톡</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-5-1"><span class="n">5-1</span><span class="t">필터 / 보정</span><span class="d">밝기 · 대비 · 채도</span></a></td></tr>
-    <tr><td><a href="#vsec-5-2"><span class="n muted">5-2</span><span class="t">특수효과</span><span class="d">잘 안 씀</span></a></td></tr>
-    <tr><td><a href="#vsec-5-3"><span class="n">5-3</span><span class="t">왜곡(모자이크)</span><span class="d">모자이크 처리</span></a></td></tr>
+    <tr><td><a href="#vsec-audio"><span class="n">1</span><span class="t">오디오</span><span class="d">배경음악 · 효과음 · 녹음 · AI보이스</span></a></td></tr>
+    <tr><td><a href="#vsec-graphic"><span class="n">2</span><span class="t">그래픽</span><span class="d">스티커 · 프레임 · 파티클 · 도형</span></a></td></tr>
+    <tr><td><a href="#vsec-text"><span class="n">3</span><span class="t">글자</span><span class="d">글꼴 · 자막 · 자동 자막</span></a></td></tr>
+    <tr><td><a href="#vsec-pip"><span class="n">4</span><span class="t">PIP</span><span class="d">사진·영상 추가</span></a></td></tr>
+    <tr><td><a href="#vsec-effect"><span class="n">5</span><span class="t">효과</span><span class="d">필터 · 특수효과 · 모자이크</span></a></td></tr>
     <tr><td><a href="#vsec-6"><span class="n">6</span><span class="t">저장하기</span><span class="d">1080P 추출</span></a></td></tr>
     <tr><td><a href="#vsec-final"><span class="n pink">✅</span><span class="t">실습 해보기</span><span class="d">오늘 배운 것 손으로 해보기</span></a></td></tr>
   </table>
@@ -417,7 +405,7 @@ footer a{color:var(--pink-deep);font-weight:700;text-decoration:none}
     </ul>
   </div>
 
-  <span class="tag">오디오</span>
+  <h2 class="cat-h" id="vsec-audio">1. 오디오</h2>
 
   <div class="hw" id="vsec-1-1">
     <div class="hw-head"><span class="rank">1-1</span><div class="hw-title">배경음악<span class="mute-tag">잘 안 씀</span></div></div>
@@ -451,7 +439,7 @@ footer a{color:var(--pink-deep);font-weight:700;text-decoration:none}
     </ul>
   </div>
 
-  <span class="tag">그래픽</span>
+  <h2 class="cat-h" id="vsec-graphic">2. 그래픽</h2>
 
   <div class="hw" id="vsec-2-1">
     <div class="hw-head"><span class="rank">2-1</span><div class="hw-title">스티커</div></div>
@@ -483,7 +471,7 @@ footer a{color:var(--pink-deep);font-weight:700;text-decoration:none}
     </ul>
   </div>
 
-  <span class="tag">글자</span>
+  <h2 class="cat-h" id="vsec-text">3. 글자</h2>
 
   <div class="hw" id="vsec-3-1">
     <div class="hw-head"><span class="rank">3-1</span><div class="hw-title">글자</div></div>
@@ -531,7 +519,7 @@ footer a{color:var(--pink-deep);font-weight:700;text-decoration:none}
     <div class="warn-note">※ 자동 자막은 완벽하지 않으니 최종 검수는 필수!</div>
   </div>
 
-  <span class="tag">PIP (사진·영상 추가)</span>
+  <h2 class="cat-h" id="vsec-pip">4. PIP (사진·영상 추가)</h2>
   <div class="pin-note" style="margin:6px 0 0">📍 기존 영상 위에 다른 사진이나 영상을 올리는 기능</div>
 
   <div class="hw" id="vsec-4-1">
@@ -562,7 +550,7 @@ footer a{color:var(--pink-deep);font-weight:700;text-decoration:none}
     </ul>
   </div>
 
-  <span class="tag">효과</span>
+  <h2 class="cat-h" id="vsec-effect">5. 효과</h2>
 
   <div class="hw" id="vsec-5-1">
     <div class="hw-head"><span class="rank">5-1</span><div class="hw-title">필터 / 보정</div></div>
