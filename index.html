@@ -39,6 +39,9 @@ header.hero .badge{display:inline-block;background:#fff;border:1px solid rgba(22
 header.hero h1{font-family:'Jalnan',sans-serif;font-weight:400;font-size:clamp(24px,4.4vw,34px);line-height:1.5;margin:0 0 12px}
 header.hero p{font-size:14px;color:#6B4E58;line-height:1.85;margin:0 auto 18px;max-width:520px}
 header.hero .insta{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:#fff;text-decoration:none;background:var(--pink-deep);padding:8px 16px;border-radius:999px}
+header.hero .hero-actions{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+header.hero .share-btn{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:#3A2A33;text-decoration:none;border:1.5px solid transparent;background:#FEE500;padding:8px 16px;border-radius:999px;cursor:pointer;font-family:inherit}
+header.hero .share-btn.copied{background:var(--pink-deep);color:#fff}
 
 .tabnav{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:16px 20px;background:var(--cream)}
 .tabbtn{font-family:'Jalnan',sans-serif;font-weight:400;font-size:15px;padding:9px 20px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--pink-deep);cursor:pointer}
@@ -146,7 +149,10 @@ footer a{color:var(--pink-deep);font-weight:700;text-decoration:none}
   <span class="badge">🎬 투빈맘의 영상모임 수강생 체크리스트</span>
   <h1>투빈맘 영상모임 복습</h1>
   <p>지난 영상모임 수업들을 탭으로 골라, 순서 그대로 하나씩 체크하면서 복습해보세요.<br>다 체크하고 나면 어느새 익숙해져 있을 거예요 :)</p>
-  <a class="insta" href="https://www.instagram.com/2bin_mom/?hl=ko" target="_blank" rel="noopener">📸 @2bin_mom 인스타 보러가기</a>
+  <div class="hero-actions">
+    <a class="insta" href="https://www.instagram.com/2bin_mom/?hl=ko" target="_blank" rel="noopener">📸 @2bin_mom 인스타 보러가기</a>
+    <button type="button" class="share-btn" onclick="shareKakao(this)">💬 카톡으로 공유</button>
+  </div>
 </header>
 
 <div class="tabnav">
@@ -617,6 +623,30 @@ footer a{color:var(--pink-deep);font-weight:700;text-decoration:none}
 </div>
 
 <script>
+function shareKakao(btn){
+  const url = location.href;
+  if (navigator.share){
+    navigator.share({ title: document.title, url }).catch(() => {});
+    return;
+  }
+  const textarea = document.createElement("textarea");
+  textarea.value = url;
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  let ok = false;
+  try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+  document.body.removeChild(textarea);
+  if (btn._resetTimer) clearTimeout(btn._resetTimer);
+  btn.classList.add("copied");
+  btn.textContent = ok ? "✅ 링크 복사완료!" : "🔗 " + url;
+  btn._resetTimer = setTimeout(() => {
+    btn.classList.remove("copied");
+    btn.textContent = "💬 카톡으로 공유";
+  }, ok ? 1800 : 4000);
+}
+
 const cbs = document.querySelectorAll('.st-check input[type=checkbox]');
 function activeCbs(){
   const active = document.querySelector('.tab-content.active');
